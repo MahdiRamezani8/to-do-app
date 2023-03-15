@@ -1,0 +1,126 @@
+@font-face {
+    font-family: EstedadBold;
+    src: url(Estedad-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    font-family: EstedadBold;
+}
+
+body {
+    font-family: EstedadBold;
+    background: linear-gradient(90deg, #ee9ca7, #ffdde1);
+}
+
+#main {
+    width: 70%;
+    height: auto;
+    background-color: rgba(0, 0, 0, .2);
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    font-family: comic sans ms;
+}
+
+#text {
+    width: 80%;
+    height: 40px;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+#options {
+    width: calc(80% + (10px * 2) - 4px);
+    display: flex;
+    margin-top: 15px;
+}
+
+#colors {
+    width: 60%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    margin-right: 2px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#btns {
+    width: 35%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 5px;
+    margin-left: 2px;
+}
+
+.progress {
+    width: 47%;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    transition: .2s;
+}
+
+#empty {
+    border: 1px solid #ff2929;
+}
+
+#empty:hover {
+    background-color: #ff2929;
+}
+
+#add {
+    border: 1px solid #00b7ff;
+}
+
+#add:hover {
+    background-color: #00b7ff;
+}
+
+#to-does {
+    width: 80%;
+    height: auto;
+    margin-top: 15px;
+    background-color: #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.to-do {
+    margin: 10px 0;
+    width: 90%;
+    height: 30px;
+    background-color: #aaa;
+    line-height: 30px;
+    padding: 5px;
+}
+
+.ielem{
+    float: right !important;
+    color: red !important;
+    font-size: 25px !important;
+    margin: 3px !important;
+    background-color: #fff !important;
+}
