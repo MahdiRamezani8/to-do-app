@@ -1,6 +1,11 @@
 const $ = document;
 let getId = id => $.getElementById(id)
-let getClass = className => $.getElementsByClassName(className)
+let getClass = className => $.querySelectorAll(className)
 let getTag = tagName => $.getElementsByTagName(tagName)
 
-export {$, getId, getClass, getTag}
+export {
+    $,
+    getId,
+    getClass,
+    getTag
+}

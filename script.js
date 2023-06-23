@@ -1,61 +1,50 @@
-import { $, getId, getClass, getTag } from "./main-js"
+import {
+    $,
+    getId,
+    getClass,
+    getTag
+} from "./main-js.js"
 
-// var $ = document;
-// let addBtn = $.getElementById('add')
-// let toDoes = $.getElementById('to-does')
-// let text = $.getElementById('text')
-// let clear = $.getElementById('empty')
-// let colors = $.querySelectorAll('.color')
-// let color = $.getElementsByClassName('color')
-// let list = $.getElementsByClassName('to-do')
-// var sum = ""
+const addToDoButton = getId('add')
+const toDoes = getId('todoes-container')
+const inputElem = getId('input')
+const clearInput = getId('empty')
+const colors = Array.from(getClass('.color'))
+const inputElemStyles = getComputedStyle(inputElem)
 
-// colors.forEach((item , index) => {
-//     item.addEventListener("click" , () => {
-//         sum = color[index].style.backgroundColor;
-//         text.style.backgroundColor = sum
-//     })
-// })
+colors.forEach(item => item.addEventListener("click", (event) => inputElem.style.backgroundColor = event.target.style.backgroundColor))
 
-// // clear input
-// clear.addEventListener('click', () => {
-//     text.value = ""
-//     text.style.backgroundColor = "white"
-//     sum = "#aaa"
-// })
+clearInput.addEventListener('click', clearInputFunc)
+addToDoButton.addEventListener('click', addTodoFunction)
+$.body.addEventListener('keypress', (event) => {
+    if (event.keyCode == 13) {
+        addTodoFunction()
+    }
+})
 
-// // function addLi() {      
-// //     if (text.value == "") {
-// //         return false;
-// //     }
-// //     let liElem = $.createElement('li');
-// //     liElem.className = "to-do"
-// //     liElem.innerHTML = text.value
-// //     liElem.style.backgroundColor = sum
+function clearInputFunc() {
+    inputElem.value = ""
+    inputElem.style.backgroundColor = ""
+}
 
-// //     let iconElem = $.createElement('i');
-// //     iconElem.className = "fa fa-minus-square ielem"
+function addTodoFunction() {
+    if (inputElem.value === "") {
+        return;
+    }
 
+    toDoes.insertAdjacentHTML(
+        'beforeend',
+        `<li class="to-do" style="background-color: ${inputElemStyles.backgroundColor}">
+          ${inputElem.value}
+          <i class="fa fa-minus-square remove-todo"></i>
+        </li>`
+      )
 
-// //     text.value = ""
-// //     sum = "#aaa"
-// //     text.style.backgroundColor = "#fff"
+    clearInputFunc()
+}
 
-// //     liElem.append(iconElem) 
-// //     toDoes.append(liElem)
-
-// //     let removeIcon = Array.from($.querySelectorAll('.ielem'))
-// //     removeIcon.forEach(element => {
-// //         element.addEventListener('click', () => {
-// //           element.parentElement.remove()
-// //         })
-// //     });
-// // }
-
-// $.body.addEventListener('keypress', () => {
-//     if (event.keyCode == 13) {
-//         addLi()
-//     }
-// })
-
-// addBtn.addEventListener('click', addLi)
+toDoes.addEventListener('click', (event) => {
+    if (event.target.tagName === "I") {
+        event.target.parentElement.remove()
+    }
+})

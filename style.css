@@ -33,7 +33,7 @@ body {
     font-family: comic sans ms;
 }
 
-#text {
+#input {
     width: 80%;
     height: 40px;
     margin-top: 15px;
@@ -97,12 +97,12 @@ body {
     background-color: #00b7ff;
 }
 
-#to-does {
-    width: 80%;
+#todoes-container {
+    width: 70%;
     height: auto;
-    margin-top: 15px;
-    background-color: #ddd;
-    padding: 10px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, .2);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +112,6 @@ body {
     margin: 10px 0;
     width: 90%;
     height: 30px;
-    background-color: #aaa;
     line-height: 30px;
     padding: 5px;
 }
@@ -122,5 +121,4 @@ body {
     color: red !important;
     font-size: 25px !important;
     margin: 3px !important;
-    background-color: #fff !important;
 }
