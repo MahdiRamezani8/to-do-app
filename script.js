@@ -16,11 +16,7 @@ colors.forEach(item => item.addEventListener("click", (event) => inputElem.style
 
 clearInput.addEventListener('click', clearInputFunc)
 addToDoButton.addEventListener('click', addTodoFunction)
-$.body.addEventListener('keypress', (event) => {
-    if (event.keyCode == 13) {
-        addTodoFunction()
-    }
-})
+$.body.addEventListener('keypress', (event) => event.keyCode == 13 && addTodoFunction())
 
 function clearInputFunc() {
     inputElem.value = ""
@@ -28,7 +24,7 @@ function clearInputFunc() {
 }
 
 function addTodoFunction() {
-    if (inputElem.value === "") {
+    if (!inputElem.value) {
         return;
     }
 
