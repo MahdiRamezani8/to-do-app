@@ -1,9 +1,6 @@
-import {
-    $,
-    getId,
-    getClass,
-    getTag
-} from "./main-js.js"
+const $ = document;
+const getId = id => $.getElementById(id)
+const getClass = className => $.querySelectorAll(className)
 
 const addToDoButton = getId('add')
 const toDoes = getId('todoes-container')
